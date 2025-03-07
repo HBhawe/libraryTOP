@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Library</h1>
+    <button class="render">Render library</button>
+    <button class="new-book">New book</button>
+    <table id="myTable">
+      <thead>
+        <tr>
+          <th scope="col">Title</th>
+          <th scope="col">Author</th>
+          <th scope="col">Pages</th>
+          <th scope="col">Read</th>
+          <th scope="col">Mark as Read</th>
+          <th scope="col">Delete</th>
+        </tr>
+      </thead>
+      <tbody class="table-content">
+        <tr class="invisible">
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>
+            <button class="markRead">Mark as read</button>
+          </td>
+          <td><button class="delete">Delete</button></td>
+        </tr>
+      </tbody>
+    </table>
+    <script src="script.js"></script>
+  </body>
+</html>
