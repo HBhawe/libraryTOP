@@ -29,8 +29,8 @@ const addBookToLibrary = function (title, author, pages, read) {
 // render the table
 const renderBooks = function () {
   myLibrary.forEach((book) => {
-    let html = `<tr><td>${book.title}</td><td>${book.author}</td><td>${book.pages}</td><td>${book.readText}</td><td><button class="markRead" data-id=${book.id}>Mark as read</button></td><td><button class="delete" data-id=${book.id}>Delete</button></td></tr>`;
-    tableContent.insertAdjacentHTML("beforeend", html);
+    let markup = `<tr><td>${book.title}</td><td>${book.author}</td><td>${book.pages}</td><td>${book.readText}</td><td><button class="markRead" data-id=${book.id}>Mark as read</button></td><td><button class="delete" data-id=${book.id}>Delete</button></td></tr>`;
+    tableContent.insertAdjacentHTML("beforeend", markup);
   });
 };
 
