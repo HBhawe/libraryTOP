@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -7,33 +7,67 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <h1>Library</h1>
-    <button class="render">Render library</button>
-    <button class="new-book">New book</button>
-    <table id="myTable">
-      <thead>
-        <tr>
-          <th scope="col">Title</th>
-          <th scope="col">Author</th>
-          <th scope="col">Pages</th>
-          <th scope="col">Read</th>
-          <th scope="col">Mark as Read</th>
-          <th scope="col">Delete</th>
-        </tr>
-      </thead>
-      <tbody class="table-content">
-        <tr class="invisible">
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td>
-            <button class="markRead">Mark as read</button>
-          </td>
-          <td><button class="delete">Delete</button></td>
-        </tr>
-      </tbody>
-    </table>
+    <h1>Book Library</h1>
+    <h3>A mini-project for the Odin Project by Harshal Bhawe</h3>
+    <button class="new-book">+ New book</button>
+    <div class="container">
+      <table id="myTable">
+        <thead>
+          <tr>
+            <th scope="col">Title</th>
+            <th scope="col">Author</th>
+            <th scope="col">Pages</th>
+            <th scope="col">Read</th>
+            <th scope="col">Mark</th>
+            <th scope="col">Delete</th>
+          </tr>
+        </thead>
+        <tbody class="table-content">
+          <tr class="invisible">
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>
+              <button class="markRead">Mark as read</button>
+            </td>
+            <td><button class="delete">Delete</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <dialog class="new-book-form">
+      <form id="book-form">
+        <fieldset>
+          <legend>Add New Book</legend>
+          <div class="form-container">
+            <div class="form-input">
+              <label for="title">Book title:</label>
+              <input type="text" id="title" name="title" required autofocus />
+            </div>
+            <div class="form-input">
+              <label for="author">Author:</label>
+              <input type="text" id="author" name="author" required />
+            </div>
+            <div class="form-input">
+              <label for="pages">Pages: </label>
+              <input type="number" id="pages" name="pages" required min="5" />
+            </div>
+            <div>
+              <input type="radio" id="read" value="1" name="read" />
+              <label for="read">Read</label>
+
+              <input type="radio" id="not-read" value="0" name="read" />
+              <label for="not-read">Unread</label>
+            </div>
+          </div>
+        </fieldset>
+        <div class="button-modal">
+          <button type="button" class="closeDialog">Cancel</button>
+          <button type="submit" class="submitForm">Save</button>
+        </div>
+      </form>
+    </dialog>
     <script src="script.js"></script>
   </body>
 </html>
