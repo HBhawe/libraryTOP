@@ -108,13 +108,15 @@ button {
   width: 100px;
 }
 
-.markRead {
+.markRead,
+.markUnread {
   width: 120px;
   height: 30px;
 }
 
 .delete,
-.markRead {
+.markRead,
+.markUnread {
   margin: 0;
 }
 

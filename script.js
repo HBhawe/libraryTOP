@@ -39,7 +39,7 @@ const clearTable = function () {
 // render the table
 const renderBooks = function () {
   myLibrary.forEach((book) => {
-    let markup = `<tr class="generated-table-row"><td>${book.title}</td><td>${book.author}</td><td>${book.pages}</td><td>${book.readText}</td><td><button class="markRead" data-id=${book.id}>Mark as read</button></td><td><button class="delete" data-id=${book.id}>Delete</button></td></tr>`;
+    let markup = `<tr class="generated-table-row"><td>${book.title}</td><td>${book.author}</td><td>${book.pages}</td><td>${book.readText}</td><td><button class="${book.read === 1 ? "markUnread" : "markRead"}" data-id=${book.id}>${book.read === 1 ? "Mark as unread" : "Mark as read"}</button></td><td><button class="delete" data-id=${book.id}>Delete</button></td></tr>`;
     tableContent.insertAdjacentHTML("beforeend", markup);
   });
 };
@@ -63,6 +63,14 @@ const markBookRead = function (id) {
   tableRender();
 };
 
+// mark a book as read
+const markBookUnread = function (id) {
+  let index = myLibrary.findIndex((book) => book.id === id);
+  myLibrary[index].read = 0;
+  myLibrary[index].readText = "Unread";
+  tableRender();
+};
+
 const deleteBook = function (id) {
   let bookIndex = id;
   let index = myLibrary.findIndex((book) => book.id === bookIndex);
@@ -80,6 +88,8 @@ tableContent.addEventListener("click", (e) => {
     markBookRead(id);
   } else if (e.target.classList.contains("delete")) {
     deleteBook(id);
+  } else if (e.target.classList.contains("markUnread")) {
+    markBookUnread(id);
   }
 });
 
