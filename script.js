@@ -15,16 +15,17 @@ const closeModal = document.querySelector(".closeDialog");
 const bookForm = document.querySelector("#book-form");
 const submitForm = document.querySelector(".submitForm");
 
-// BOOK constructor
-const Book = function (title, author, pages, read) {
-  read = Number(read);
-  this.title = title;
-  this.author = author;
-  this.pages = pages;
-  this.read = read;
-  this.readText = read === 1 ? "Read" : "Not read";
-  this.id = crypto.randomUUID();
-};
+// BOOK CLASS
+class Book {
+  constructor(title, author, pages, read) {
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.read = read;
+    this.readText = read === 1 ? "Read" : "Not read";
+    this.id = crypto.randomUUID();
+  }
+}
 
 // creating a book using the constructor
 const addBookToLibrary = function (title, author, pages, read) {
